@@ -32,7 +32,7 @@ create table detalle_pedido(
     id_plato varchar(10),
     num_platos numeric(2) not null,
     constraint PK_Detalle_Pedidos primary key (id_pedido, id_plato),
-    constraint fk_id_pedido_pedidos foreign key (id_pedido) references pedido(id_pedido),
+    constraint fk_id_pedido_pedidos foreign key (id_pedido) references pedidos(id_pedido),
     constraint fk_id_plato_pedidos foreign key (id_plato) references platos(id_plato)
 );
 
