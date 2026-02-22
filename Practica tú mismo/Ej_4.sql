@@ -23,7 +23,7 @@ alter table profesores drop constraint pk_profesores;
 alter table profesores add constraint pk_profesores primary key (nombrePro, apellido1Pro, apellido2Pro);
 
 --Renombra la tabla PROFESORES por TUTORES.
-alter table profesores rename to tutores; -- !!
+rename table profesores to tutores; -- !!
 
 -- Elimina la tabla ALUMNOS.
 drop table alumnos;
