@@ -8,7 +8,7 @@ create table director(
 );
 
 create table pelicula(
-    titulo varchar(30),
+    titulo varchar(30) unique,
     nacionalidad varchar(20),
     productora varchar(20),
     fecha date,
@@ -73,6 +73,7 @@ alter table pelicula_actor add constraint pk_pelicula_actor primary key (id_peli
 
 --Claves foráneas
 alter table pelicula add constraint fk_pelicula_director foreign key (director) references director(dni);
+alter table ejemplares add constraint fk_ejemplar_pelicula foreign key (titulo) references pelicula(titulo);
 alter table alquiler add constraint fk_alquiler_ejemplar foreign key (ejemplar) references ejemplares(numero_ejemplar);
 alter table alquiler add constraint fk_alquiler_socio foreign key (socio) references socio(dni);
 alter table pelicula_actor add constraint fk_pelicula_actor_pelicula foreign key (id_pelicula) references pelicula(id_pelicula);
@@ -85,7 +86,7 @@ alter table socio add fechanac date;
 alter table alquiler add importe float not null;
 
 -- La Fecha de devolución no pude ser menor que la de préstamo.
-alter table alquiler add constraint ck_edad check (fecha_devolucion >= fecha_prestamo);
+alter table alquiler add constraint ck_fecha_alquiler check (fecha_devolucion >= fecha_prestamo);
 
 -- Añade una columna a la tabla Películas, llamada DineroGenerado, no puede ser nula.
 alter table pelicula add dinero_generado float not null;
