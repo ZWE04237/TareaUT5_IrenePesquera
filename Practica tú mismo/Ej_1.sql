@@ -9,7 +9,7 @@ create table comercial(
     apellido1 varchar(100),
     apellido2 varchar(100),
     ciudad varchar(100),
-    comision float
+    comision decimal(5,2)
 );
 
 create table cliente(
