@@ -4,7 +4,7 @@ use academia;
 create table departamentos(
     dnume numeric(3) not null,
     dnombre varchar(15),
-    dedificio numeric(3),
+    dedificio numeric(2),
     ddire varchar(20),
     constraint pk_departamentos primary key (dnume)
 );
@@ -24,7 +24,7 @@ create table profesores(
     pdomi varchar(10),
     pdepar numeric(3),
     constraint pk_profesores primary key (pnume),
-    constraint fk_profesores_departamentos foreign key (pdepar) references departementos (dnume)
+    constraint fk_profesores_departamentos foreign key (pdepar) references departamentos (dnume)
 );
 
 create table cursos(
