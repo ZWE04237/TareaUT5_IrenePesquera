@@ -5,7 +5,7 @@ create table clientes(
     dnicli varchar(9),
     nombrecli varchar(10),
     ciudadcli varchar(20),
-    telfcli varchar(9)
+    telfcli varchar(9),
     constraint pk_clientes primary key (dnicli)
 );
 
@@ -15,7 +15,7 @@ create table ventas(
     dnicli varchar(9),
     cifconcesi varchar(10),
     codcoche numeric(5),
-    constraint pk_ventas primary key (codventa),
+    constraint pk_ventas primary key (codventa)
 );
 
 create table concesionarios(
